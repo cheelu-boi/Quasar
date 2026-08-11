@@ -1,0 +1,9 @@
+version: 1.0.{build}
+image: Visual Studio 2022
+configuration: Release
+before_build:
+  - dotnet restore QUASAR.sln
+build_script:
+  - dotnet build QUASAR.sln --configuration Release
+test_script:
+  - dotnet test QUASAR.Common.Tests/QUARSAR.Common.Tests.csproj --configuration Release
